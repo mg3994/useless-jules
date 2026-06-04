@@ -37,7 +37,7 @@ function doPost(e) {
         response = ServiceService.book(payload);
         break;
       case 'GET_INVENTORY':
-        response = InventoryService.getAll();
+        response = InventoryService.getFiltered(payload);
         break;
       default:
         throw new Error('Invalid action: ' + action);
@@ -149,12 +149,65 @@ const ServiceService = {
 };
 
 /**
- * Inventory Service - Stock management
+ * Inventory Service - Stock management with Pagination, Filtering, and Sorting
  */
 const InventoryService = {
-  getAll: function() {
+  getFiltered: function(params) {
+    const {
+      page = 1,
+      pageSize = 12,
+      category = '',
+      search = '',
+      sortBy = 'name', // 'name', 'price_asc', 'price_desc'
+      status = 'Active'
+    } = params;
+
     const sheet = Repository.getSheet('Inventory');
-    return Repository.getAll(sheet);
+    let data = Repository.getAll(sheet); // Array of arrays [[ID, Category, Name, Stock, Price, Status], ...]
+
+    // 1. Filtering
+    if (category) {
+      data = data.filter(row => row[1] === category);
+    }
+    if (search) {
+      const query = search.toLowerCase();
+      data = data.filter(row => row[2].toLowerCase().includes(query));
+    }
+    if (status) {
+      data = data.filter(row => row[5] === status);
+    }
+
+    // 2. Sorting
+    data.sort((a, b) => {
+      switch(sortBy) {
+        case 'price_asc': return a[4] - b[4];
+        case 'price_desc': return b[4] - a[4];
+        case 'name': return a[2].localeCompare(b[2]);
+        default: return 0;
+      }
+    });
+
+    // 3. Pagination
+    const totalCount = data.length;
+    const startIndex = (page - 1) * pageSize;
+    const paginatedData = data.slice(startIndex, startIndex + pageSize);
+
+    return {
+      products: paginatedData.map(row => ({
+        id: row[0],
+        category: row[1],
+        name: row[2],
+        stock: row[3],
+        price: row[4],
+        status: row[5]
+      })),
+      pagination: {
+        currentPage: page,
+        pageSize: pageSize,
+        totalCount: totalCount,
+        totalPages: Math.ceil(totalCount / pageSize)
+      }
+    };
   }
 };
 
