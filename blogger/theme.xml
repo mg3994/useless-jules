@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<html
+  b:css="false"
+  b:defaultwidgetversion="2"
+  b:layoutsversion="3"
+  b:responsive="true"
+  expr:dir="data:blog.languageDirection"
+  expr:lang="data:blog.locale"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:b="http://www.google.com/2005/gml/b"
+  xmlns:data="http://www.google.com/2005/gml/data"
+  xmlns:expr="http://www.google.com/2005/gml/expr"
+>
+  <head>
+    <!-- For EU regions -->
+    <script>
+      cookieOptions = {
+       close: &quot;Got it!&quot;,
+       learn: &quot;Privacy Policy&quot;,
+       link: &quot;<data:blog.canonicalHomepageUrl/>p/privacy-policy.html&quot;
+      };
+    </script>
+    <!-- viewport Related Meta tags -->
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- All Blogger Meta tags Auto added by blogger platform -->
+    <b:include data="blog" name="all-head-content" />
+    <!-- Open Graph Meta tags  -->
+    <meta content="website" property="og:type" />
+    <meta content="IN-HR" name="geo.region" />
+    <meta content="+918607573994" name="contact.phone" />
+    <!-- All Links Related -->
+    <link
+      expr:href="data:blog.homepageUrl.canonical"
+      expr:title="data:messages.home"
+      rel="home"
+    />
+    <link
+      expr:href='data:blog.homepageUrl.canonical path "search"'
+      expr:title="data:messages.search"
+      rel="search"
+    />
+    <!-- content Rating -->
+    <b:if cond="!data:blog.adultContent">
+      <meta content="general" name="rating" />
+    </b:if>
+    <b:if cond="data:blog.adultContent">
+      <meta content="adult" name="rating" />
+    </b:if>
+    <!-- All Canonical links -->
+    <b:tag
+      cond="!data:blog.isMobileRequest and data:view.url ==  data:view.url.canonical"
+      expr:href="data:view.url params {m: 1}"
+      media="only screen and (max-width: 640px)"
+      name="link"
+      rel="alternate"
+    />
+
+    <b:tag
+      cond="data:view.isMultipleItems and data:widgets.Blog.first.posts[0].featuredImage"
+      expr:href="data:widgets.Blog.first.posts[0].featuredImage resizeImage 1600"
+      name="link"
+      rel="image_src"
+    />
+    <b:tag
+      cond="data:view.isSingleItem and data:view.featuredImage"
+      expr:href="data:view.featuredImage resizeImage 1600"
+      name="link"
+      rel="image_src"
+    />
+    <b:if cond="data:blog.analyticsAccountNumber">
+      <!-- Google Analytics TODO -->
+      <b:include data="blog" name="google-analytics" />
+    </b:if>
+
+    <!-- JSON-LD Structured Data -->
+    <b:if cond="data:view.isHomepage">
+      <script type="application/ld+json">
+        {&quot;@context&quot;:&quot;http://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;<data:blog.title/>&quot;,&quot;description&quot;: &quot;<data:view.description.escaped/>&quot;,&quot;url&quot;:&quot;<data:blog.canonicalHomepageUrl/>&quot;,&quot;potentialAction&quot;:{&quot;@type&quot;:&quot;SearchAction&quot;,&quot;target&quot;:&quot;<data:blog.canonicalHomepageUrl/>search?q={search_term_string}&quot;,&quot;query-input&quot;:&quot;required name=search_term_string&quot;}}
+      </script>
+    </b:if>
+    <script type="application/ld+json">
+      {
+       &quot;@context&quot;: &quot;http://schema.org&quot;,
+       &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+       &quot;@id&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+       &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+       &quot;itemListElement&quot;: [{
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 1,
+          &quot;name&quot;: &quot;Home&quot;,
+          &quot;item&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;
+       },
+       {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 2,
+          &quot;name&quot;: &quot;About&quot;,
+          &quot;item&quot;: &quot;<data:blog.canonicalHomepageUrl/>#about&quot;
+       },
+       {
+          &quot;@type&quot;: &quot;ListItem&quot;,
+          &quot;position&quot;: 3,
+          &quot;name&quot;: &quot;Contact Us&quot;,
+          &quot;item&quot;: &quot;<data:blog.canonicalHomepageUrl/>#contact&quot;
+       }
+
+       ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        &quot;@context&quot;: &quot;https://schema.org&quot;,
+        &quot;@type&quot;: &quot;LocalBusiness&quot;,
+        &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+        &quot;url&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+        &quot;logo&quot;: &quot;<data:blog.blogspotFaviconUrl/>&quot;,
+        &quot;image&quot;: &quot;<data:blog.blogspotFaviconUrl/>&quot;,
+        &quot;sameAs&quot;: [
+          &quot;https://www.facebook.com/profile.php?id=100082961891641&quot;,
+          &quot;https://www.youtube.com/@Antinna&quot;,
+          &quot;https://www.instagram.com/antinna.yt&quot;,
+          &quot;https://github.com/antinna&quot;,
+          &quot;https://play.google.com/store/apps/dev?id=7417258411166270372&quot;
+        ],
+        &quot;contactPoint&quot;: {
+          &quot;@type&quot;: &quot;ContactPoint&quot;,
+          &quot;telephone&quot;: &quot;+918607573994&quot;,
+          &quot;contactType&quot;: &quot;customer service&quot;,
+          &quot;email&quot;: &quot;contact@antinna.in&quot;,
+          &quot;availableLanguage&quot;: [&quot;en&quot;, &quot;hi&quot;]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        &quot;@context&quot;: &quot;https://schema.org&quot;,
+        &quot;@type&quot;: &quot;ProfessionalService&quot;,
+        &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+        &quot;image&quot;: &quot;<data:blog.blogspotFaviconUrl/>&quot;,
+        &quot;@id&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+        &quot;url&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+        &quot;telephone&quot;: &quot;+919813954763&quot;,
+        &quot;priceRange&quot;: &quot;$$&quot;,
+        &quot;address&quot;: {
+        &quot;@type&quot;: &quot;PostalAddress&quot;,
+        &quot;streetAddress&quot;: &quot;H.No. 42, Village:- Todi&quot;,
+        &quot;addressLocality&quot;: &quot;Charkhi Dadri&quot;,
+        &quot;addressRegion&quot;: &quot;Haryana&quot;,
+        &quot;postalCode&quot;: &quot;127310&quot;,
+        &quot;addressCountry&quot;: &quot;IN&quot;
+      },
+        &quot;geo&quot;: {
+          &quot;@type&quot;: &quot;GeoCoordinates&quot;,
+          &quot;latitude&quot;: 28.527867,
+          &quot;longitude&quot;: 76.083600
+        },
+        &quot;openingHoursSpecification&quot;: {
+          &quot;@type&quot;: &quot;OpeningHoursSpecification&quot;,
+          &quot;dayOfWeek&quot;: [
+            &quot;Monday&quot;,
+            &quot;Tuesday&quot;,
+            &quot;Wednesday&quot;,
+            &quot;Thursday&quot;,
+            &quot;Friday&quot;,
+            &quot;Saturday&quot;,
+            &quot;Sunday&quot;
+          ],
+          &quot;opens&quot;: &quot;00:00&quot;,
+          &quot;closes&quot;: &quot;23:59&quot;
+        },
+        &quot;sameAs&quot;: [
+          &quot;https://www.facebook.com/profile.php?id=100082961891641&quot;,
+          &quot;https://www.instagram.com/antinna.yt/&quot;,
+          &quot;https://youtube.com/antinna&quot;,
+          &quot;https://github.com/antinna&quot;,
+          &quot;https://play.google.com/store/apps/dev?id=7417258411166270372&quot;,
+          &quot;<data:blog.canonicalHomepageUrl/>&quot;
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        &quot;@context&quot;: &quot;https://schema.org&quot;,
+        &quot;@type&quot;: &quot;Project&quot;,
+        &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+        &quot;url&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+        &quot;logo&quot;: &quot;<data:blog.blogspotFaviconUrl/>&quot;,
+        &quot;contactPoint&quot;: [
+          {
+            &quot;@type&quot;: &quot;ContactPoint&quot;,
+            &quot;telephone&quot;: &quot;+918607573994&quot;,
+            &quot;contactType&quot;: &quot;Technical Support&quot;,
+            &quot;areaServed&quot;: [&quot;US&quot;,&quot;GB&quot;,&quot;CA&quot;,&quot;AF&quot;,&quot;155&quot;,&quot;039&quot;,&quot;154&quot;,&quot;151&quot;,&quot;150&quot;,&quot;145&quot;,&quot;034&quot;,&quot;035&quot;,&quot;030&quot;,&quot;143&quot;,&quot;142&quot;,&quot;419&quot;,&quot;015&quot;,&quot;002&quot;,&quot;ZM&quot;,&quot;YE&quot;,&quot;EH&quot;,&quot;ZW&quot;,&quot;WF&quot;,&quot;VN&quot;,&quot;VE&quot;,&quot;AX&quot;,&quot;AL&quot;,&quot;DZ&quot;,&quot;AS&quot;,&quot;AD&quot;,&quot;AO&quot;,&quot;AQ&quot;,&quot;AI&quot;,&quot;AG&quot;,&quot;AW&quot;,&quot;AM&quot;,&quot;AR&quot;,&quot;AT&quot;,&quot;AU&quot;,&quot;AZ&quot;,&quot;BS&quot;,&quot;BH&quot;,&quot;BD&quot;,&quot;BB&quot;,&quot;BY&quot;,&quot;BE&quot;,&quot;BZ&quot;,&quot;BJ&quot;,&quot;BM&quot;,&quot;BT&quot;,&quot;BO&quot;,&quot;BQ&quot;,&quot;BA&quot;,&quot;BW&quot;,&quot;VA&quot;,&quot;VU&quot;,&quot;UZ&quot;,&quot;UY&quot;,&quot;UM&quot;,&quot;AE&quot;,&quot;UA&quot;,&quot;TV&quot;,&quot;VI&quot;,&quot;UG&quot;,&quot;TC&quot;,&quot;TT&quot;,&quot;TN&quot;,&quot;TR&quot;,&quot;TM&quot;,&quot;TG&quot;,&quot;TK&quot;,&quot;TO&quot;,&quot;TH&quot;,&quot;TZ&quot;,&quot;TJ&quot;,&quot;TW&quot;,&quot;CH&quot;,&quot;SY&quot;,&quot;SE&quot;,&quot;BR&quot;,&quot;BV&quot;,&quot;IO&quot;,&quot;VG&quot;,&quot;BN&quot;,&quot;BG&quot;,&quot;BF&quot;,&quot;BI&quot;,&quot;KH&quot;,&quot;CM&quot;,&quot;CV&quot;,&quot;KY&quot;,&quot;CF&quot;,&quot;TD&quot;,&quot;CL&quot;,&quot;CX&quot;,&quot;CN&quot;,&quot;CC&quot;,&quot;CO&quot;,&quot;KM&quot;,&quot;CK&quot;,&quot;HR&quot;,&quot;CR&quot;,&quot;CU&quot;,&quot;CW&quot;,&quot;CY&quot;,&quot;CZ&quot;,&quot;CD&quot;,&quot;DK&quot;,&quot;DJ&quot;,&quot;DM&quot;,&quot;DO&quot;,&quot;TL&quot;,&quot;EG&quot;,&quot;SV&quot;,&quot;EC&quot;,&quot;GQ&quot;,&quot;EE&quot;,&quot;ER&quot;,&quot;ET&quot;,&quot;FK&quot;,&quot;FO&quot;,&quot;FJ&quot;,&quot;FI&quot;,&quot;GF&quot;,&quot;FR&quot;,&quot;PF&quot;,&quot;TF&quot;,&quot;GA&quot;,&quot;GM&quot;,&quot;SZ&quot;,&quot;SR&quot;,&quot;SJ&quot;,&quot;SD&quot;,&quot;SS&quot;,&quot;ES&quot;,&quot;LK&quot;,&quot;KR&quot;,&quot;GS&quot;,&quot;ZA&quot;,&quot;SO&quot;,&quot;SB&quot;,&quot;SI&quot;,&quot;SK&quot;,&quot;SG&quot;,&quot;SX&quot;,&quot;SL&quot;,&quot;SC&quot;,&quot;SN&quot;,&quot;SA&quot;,&quot;RS&quot;,&quot;PM&quot;,&quot;VC&quot;,&quot;SM&quot;,&quot;WS&quot;,&quot;ST&quot;,&quot;GE&quot;,&quot;DE&quot;,&quot;GH&quot;,&quot;GI&quot;,&quot;GR&quot;,&quot;GL&quot;,&quot;GD&quot;,&quot;GP&quot;,&quot;GT&quot;,&quot;MF&quot;,&quot;LC&quot;,&quot;BL&quot;,&quot;SH&quot;,&quot;KN&quot;,&quot;RW&quot;,&quot;RO&quot;,&quot;RU&quot;,&quot;RE&quot;,&quot;CG&quot;,&quot;PT&quot;,&quot;PL&quot;,&quot;PR&quot;,&quot;QA&quot;,&quot;PH&quot;,&quot;PN&quot;,&quot;GN&quot;,&quot;GG&quot;,&quot;GU&quot;,&quot;GW&quot;,&quot;GY&quot;,&quot;HT&quot;,&quot;HM&quot;,&quot;HN&quot;,&quot;HK&quot;,&quot;HU&quot;,&quot;IS&quot;,&quot;ID&quot;,&quot;IN&quot;,&quot;IR&quot;,&quot;IQ&quot;,&quot;IE&quot;,&quot;IM&quot;,&quot;IT&quot;,&quot;IL&quot;,&quot;JP&quot;,&quot;JO&quot;,&quot;JM&quot;,&quot;JE&quot;,&quot;CI&quot;,&quot;KW&quot;,&quot;KG&quot;,&quot;LA&quot;,&quot;XK&quot;,&quot;KI&quot;,&quot;KE&quot;,&quot;KZ&quot;,&quot;LV&quot;,&quot;LB&quot;,&quot;LS&quot;,&quot;LY&quot;,&quot;LR&quot;,&quot;LT&quot;,&quot;LU&quot;,&quot;LI&quot;,&quot;PY&quot;,&quot;PE&quot;,&quot;PG&quot;,&quot;PA&quot;,&quot;PW&quot;,&quot;PS&quot;,&quot;PK&quot;,&quot;NO&quot;,&quot;OM&quot;,&quot;MP&quot;,&quot;KP&quot;,&quot;NI&quot;,&quot;NE&quot;,&quot;NG&quot;,&quot;NU&quot;,&quot;NF&quot;,&quot;NZ&quot;,&quot;NA&quot;,&quot;NP&quot;,&quot;NL&quot;,&quot;NR&quot;,&quot;NC&quot;,&quot;MM&quot;,&quot;MZ&quot;,&quot;MS&quot;,&quot;MN&quot;,&quot;ME&quot;,&quot;MA&quot;,&quot;MD&quot;,&quot;MC&quot;,&quot;FM&quot;,&quot;MX&quot;,&quot;MR&quot;,&quot;MU&quot;,&quot;YT&quot;,&quot;MQ&quot;,&quot;MH&quot;,&quot;MV&quot;,&quot;ML&quot;,&quot;MT&quot;,&quot;MW&quot;,&quot;MG&quot;,&quot;MY&quot;,&quot;MO&quot;,&quot;MK&quot;],
+            &quot;availableLanguage&quot;: [&quot;en&quot;,&quot;Gujarati&quot;,&quot;Hindi&quot;,&quot;Tamil&quot;,&quot;Telugu&quot;,&quot;Urdu&quot;,&quot;Panjabi&quot;]
+          },
+          {
+            &quot;@type&quot;: &quot;ContactPoint&quot;,
+            &quot;telephone&quot;: &quot;+918607573994&quot;,
+            &quot;contactType&quot;: &quot;customer service&quot;,
+            &quot;areaServed&quot;: [&quot;US&quot;,&quot;GB&quot;,&quot;CA&quot;,&quot;AF&quot;,&quot;155&quot;,&quot;039&quot;,&quot;154&quot;,&quot;151&quot;,&quot;150&quot;,&quot;145&quot;,&quot;034&quot;,&quot;035&quot;,&quot;030&quot;,&quot;143&quot;,&quot;142&quot;,&quot;419&quot;,&quot;015&quot;,&quot;002&quot;,&quot;ZM&quot;,&quot;YE&quot;,&quot;EH&quot;,&quot;ZW&quot;,&quot;WF&quot;,&quot;VN&quot;,&quot;VE&quot;,&quot;AX&quot;,&quot;AL&quot;,&quot;DZ&quot;,&quot;AS&quot;,&quot;AD&quot;,&quot;AO&quot;,&quot;AQ&quot;,&quot;AI&quot;,&quot;AG&quot;,&quot;AW&quot;,&quot;AM&quot;,&quot;AR&quot;,&quot;AT&quot;,&quot;AU&quot;,&quot;AZ&quot;,&quot;BS&quot;,&quot;BH&quot;,&quot;BD&quot;,&quot;BB&quot;,&quot;BY&quot;,&quot;BE&quot;,&quot;BZ&quot;,&quot;BJ&quot;,&quot;BM&quot;,&quot;BT&quot;,&quot;BO&quot;,&quot;BQ&quot;,&quot;BA&quot;,&quot;BW&quot;,&quot;VA&quot;,&quot;VU&quot;,&quot;UZ&quot;,&quot;UY&quot;,&quot;UM&quot;,&quot;AE&quot;,&quot;UA&quot;,&quot;TV&quot;,&quot;VI&quot;,&quot;UG&quot;,&quot;TC&quot;,&quot;TT&quot;,&quot;TN&quot;,&quot;TR&quot;,&quot;TM&quot;,&quot;TG&quot;,&quot;TK&quot;,&quot;TO&quot;,&quot;TH&quot;,&quot;TZ&quot;,&quot;TJ&quot;,&quot;TW&quot;,&quot;CH&quot;,&quot;SY&quot;,&quot;SE&quot;,&quot;BR&quot;,&quot;BV&quot;,&quot;IO&quot;,&quot;VG&quot;,&quot;BN&quot;,&quot;BG&quot;,&quot;BF&quot;,&quot;BI&quot;,&quot;KH&quot;,&quot;CM&quot;,&quot;CV&quot;,&quot;KY&quot;,&quot;CF&quot;,&quot;TD&quot;,&quot;CL&quot;,&quot;CX&quot;,&quot;CN&quot;,&quot;CC&quot;,&quot;CO&quot;,&quot;KM&quot;,&quot;CK&quot;,&quot;HR&quot;,&quot;CR&quot;,&quot;CU&quot;,&quot;CW&quot;,&quot;CY&quot;,&quot;CZ&quot;,&quot;CD&quot;,&quot;DK&quot;,&quot;DJ&quot;,&quot;DM&quot;,&quot;DO&quot;,&quot;TL&quot;,&quot;EG&quot;,&quot;SV&quot;,&quot;EC&quot;,&quot;GQ&quot;,&quot;EE&quot;,&quot;ER&quot;,&quot;ET&quot;,&quot;FK&quot;,&quot;FO&quot;,&quot;FJ&quot;,&quot;FI&quot;,&quot;GF&quot;,&quot;FR&quot;,&quot;PF&quot;,&quot;TF&quot;,&quot;GA&quot;,&quot;GM&quot;,&quot;SZ&quot;,&quot;SR&quot;,&quot;SJ&quot;,&quot;SD&quot;,&quot;SS&quot;,&quot;ES&quot;,&quot;LK&quot;,&quot;KR&quot;,&quot;GS&quot;,&quot;ZA&quot;,&quot;SO&quot;,&quot;SB&quot;,&quot;SI&quot;,&quot;SK&quot;,&quot;SG&quot;,&quot;SX&quot;,&quot;SL&quot;,&quot;SC&quot;,&quot;SN&quot;,&quot;SA&quot;,&quot;RS&quot;,&quot;PM&quot;,&quot;VC&quot;,&quot;SM&quot;,&quot;WS&quot;,&quot;ST&quot;,&quot;GE&quot;,&quot;DE&quot;,&quot;GH&quot;,&quot;GI&quot;,&quot;GR&quot;,&quot;GL&quot;,&quot;GD&quot;,&quot;GP&quot;,&quot;GT&quot;,&quot;MF&quot;,&quot;LC&quot;,&quot;BL&quot;,&quot;SH&quot;,&quot;KN&quot;,&quot;RW&quot;,&quot;RO&quot;,&quot;RU&quot;,&quot;RE&quot;,&quot;CG&quot;,&quot;PT&quot;,&quot;PL&quot;,&quot;PR&quot;,&quot;QA&quot;,&quot;PH&quot;,&quot;PN&quot;,&quot;GN&quot;,&quot;GG&quot;,&quot;GU&quot;,&quot;GW&quot;,&quot;GY&quot;,&quot;HT&quot;,&quot;HM&quot;,&quot;HN&quot;,&quot;HK&quot;,&quot;HU&quot;,&quot;IS&quot;,&quot;ID&quot;,&quot;IN&quot;,&quot;IR&quot;,&quot;IQ&quot;,&quot;IE&quot;,&quot;IM&quot;,&quot;IT&quot;,&quot;IL&quot;,&quot;JP&quot;,&quot;JO&quot;,&quot;JM&quot;,&quot;JE&quot;,&quot;CI&quot;,&quot;KW&quot;,&quot;KG&quot;,&quot;LA&quot;,&quot;XK&quot;,&quot;KI&quot;,&quot;KE&quot;,&quot;KZ&quot;,&quot;LV&quot;,&quot;LB&quot;,&quot;LS&quot;,&quot;LY&quot;,&quot;LR&quot;,&quot;LT&quot;,&quot;LU&quot;,&quot;LI&quot;,&quot;PY&quot;,&quot;PE&quot;,&quot;PG&quot;,&quot;PA&quot;,&quot;PW&quot;,&quot;PS&quot;,&quot;PK&quot;,&quot;NO&quot;,&quot;OM&quot;,&quot;MP&quot;,&quot;KP&quot;,&quot;NI&quot;,&quot;NE&quot;,&quot;NG&quot;,&quot;NU&quot;,&quot;NF&quot;,&quot;NZ&quot;,&quot;NA&quot;,&quot;NP&quot;,&quot;NL&quot;,&quot;NR&quot;,&quot;NC&quot;,&quot;MM&quot;,&quot;MZ&quot;,&quot;MS&quot;,&quot;MN&quot;,&quot;ME&quot;,&quot;MA&quot;,&quot;MD&quot;,&quot;MC&quot;,&quot;FM&quot;,&quot;MX&quot;,&quot;MR&quot;,&quot;MU&quot;,&quot;YT&quot;,&quot;MQ&quot;,&quot;MH&quot;,&quot;MV&quot;,&quot;ML&quot;,&quot;MT&quot;,&quot;MW&quot;,&quot;MG&quot;,&quot;MY&quot;,&quot;MO&quot;,&quot;MK&quot;],
+            &quot;availableLanguage&quot;: [&quot;en&quot;,&quot;Gujarati&quot;,&quot;Hindi&quot;,&quot;Tamil&quot;,&quot;Telugu&quot;,&quot;Urdu&quot;,&quot;Panjabi&quot;]
+          }
+        ],
+        &quot;sameAs&quot;: [
+          &quot;https://www.facebook.com/profile.php?id=100082961891641&quot;,
+          &quot;https://www.instagram.com/antinna.yt/&quot;,
+          &quot;https://youtube.com/antinna&quot;,
+          &quot;https://github.com/antinna&quot;,
+          &quot;https://play.google.com/store/apps/dev?id=7417258411166270372&quot;,
+          &quot;<data:blog.canonicalHomepageUrl/>&quot;
+        ]
+      }
+    </script>
+
+    <title>
+      <data:view.title.escaped/> <b:if cond='data:view.isArchive'>:
+      <data:blog.pageName/>&#65288;<data:messages.archive/>&#65289; <b:elseif
+      cond='data:view.isLabelSearch'/>:
+      <data:blog.pageName/>&#65288;<data:messages.labels/>&#65289; <b:elseif
+      cond='data:view.isSearch'/>: <data:messages.search/> </b:if>
+    </title>
+
+    <meta
+      expr:content="(data:view.isMultipleItems ? data:blog.pageTitle : data:view.title).escaped"
+      name="subject"
+    />
+    <b:if cond="data:blog.metaDescription">
+      <meta expr:content="data:blog.metaDescription" name="description" />
+    </b:if>
+
+    <!-- prettier-ignore -->
+    <b:skin
+    ><![CDATA[
+    
+      :root {
+        --primary: #0284c7;
+        --primary-dark: #0369a1;
+        --accent: #f97316;
+        --accent-dark: #ea580c;
+        --text-dark: #0f172a;
+        --text-light: #64748b;
+        --bg-body: #f8fafc;
+        --white: #ffffff;
+        --border: #e2e8f0;
+        --nav-height: 70px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg:
+          0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+      }
+      body {
+        background-color: var(--bg-body);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      body.no-scroll {
+        overflow: hidden;
+      }
+      .navbar {
+        height: var(--nav-height);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 0 1rem;
+        transition: var(--transition);
+      }
+      .nav-container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text-dark);
+        font-weight: 800;
+        font-size: 1.35rem;
+        letter-spacing: -0.5px;
+      }
+      .logo-box {
+        background: transparent;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none; /* optional */
+      }
+      .desktop-links {
+        display: none;
+        gap: 6px;
+        margin-left: 20px;
+      }
+      .nav-item {
+        text-decoration: none;
+        color: var(--text-light);
+        font-size: 0.95rem;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .nav-item:hover,
+      .nav-item.active {
+        background: #f1f5f9;
+        color: var(--primary);
+      }
+      .actions-group {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .icon-btn {
+        background: none;
+        border: none;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        transition: var(--transition);
+        position: relative;
+      }
+      .icon-btn:hover {
+        background: #f1f5f9;
+        color: var(--primary);
+      }
+      .icon-btn:active {
+        transform: scale(0.95);
+      }
+      .badge {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        background: var(--accent);
+        color: white;
+        font-size: 0.7rem;
+        font-weight: 700;
+        min-width: 16px;
+        height: 16px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4px;
+        border: 2px solid white;
+      }
+      .search-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .search-bar-desktop {
+        display: none;
+        width: 0;
+        overflow: hidden;
+        background: #f1f5f9;
+        border-radius: 20px;
+        transition:
+          width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          padding 0.3s ease;
+        height: 38px;
+        border: 1px solid transparent;
+      }
+      .search-bar-desktop.active {
+        width: 260px;
+        padding: 0 15px;
+        border-color: var(--border);
+        background: white;
+        margin-right: 8px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+      }
+      .search-bar-desktop input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 0.95rem;
+        color: var(--text-dark);
+      } /* Floating Search Suggestions Box */
+      .search-suggestions {
+        position: absolute;
+        top: 48px;
+        right: 0;
+        width: 350px;
+        background: white;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-lg);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 1050;
+      }
+      .search-suggestions.active {
+        display: flex;
+      }
+      .suggestion-header {
+        padding: 10px 15px;
+        background: #f8fafc;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.8rem;
+        color: var(--text-light);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      
+      
+      
+      #mobile-search-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--nav-height);
+        background: white;
+        z-index: 1100;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        transform: translateY(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow);
+      }
+      #mobile-search-overlay.active {
+        transform: translateY(0);
+      }
+      .search-overlay-inner {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+      }
+      .search-input-mobile {
+        flex: 1;
+        border: 1px solid var(--border);
+        background: #f1f5f9;
+        padding: 10px 16px;
+        border-radius: 20px;
+        outline: none;
+        font-size: 1rem;
+        color: var(--text-dark);
+        transition: var(--transition);
+      }
+      .search-input-mobile:focus {
+        background: white;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+      } /* Mobile
+      suggestions scroll panel */
+      .mobile-suggestions {
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: white;
+        max-height: calc(100vh - var(--nav-height));
+        overflow-y: auto;
+        box-shadow: var(--shadow);
+        border-bottom: 1px solid var(--border);
+        display: none;
+      }
+      .mobile-suggestions.active {
+        display: block;
+      }
+      
+      /* Toast
+      notifications */
+      .toast-container {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 2500;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .toast {
+        background: #0f172a;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 10px;
+        box-shadow: var(--shadow-lg);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transform: translateY(100px);
+        opacity: 0;
+        animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      @keyframes slideUp {
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      } /*
+      Modern Google Login Button Styles */
+      .btn-google-login {
+        background: #ffffff;
+        color: var(--text-dark);
+        border: 1.5px solid var(--border);
+        padding: 8px 16px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      }
+      .btn-google-login:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        transform: translateY(-1px);
+      }
+      .btn-google-login svg {
+        width: 18px;
+        height: 18px;
+      } /* Profile Dropdown Container styling */
+      .profile-container {
+        position: relative;
+      }
+      .profile-dropdown {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 300px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        display: none;
+        flex-direction: column;
+        padding: 1.25rem;
+        z-index: 1100;
+        animation: dropdownFade 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      @keyframes dropdownFade {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .profile-dropdown.active {
+        display: flex;
+      }
+      .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .profile-header img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--primary);
+      }
+      .profile-name {
+        font-weight: 800;
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+      }
+      .profile-email {
+        font-size: 0.75rem;
+        color: var(--text-light);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+      }
+      .profile-body {
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .profile-body-title {
+        font-size: 0.7rem;
+        font-weight: 800;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .profile-uid-box {
+        display: flex;
+        align-items: center;
+        background: #f1f5f9;
+        border-radius: 8px;
+        padding: 6px 10px;
+        gap: 8px;
+        justify-content: space-between;
+      }
+      .profile-uid {
+        font-family: monospace;
+        font-size: 0.75rem;
+        color: #334155;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        user-select: all;
+      }
+      .btn-copy-uid {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-light);
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .btn-copy-uid:hover {
+        color: var(--primary);
+      }
+      .profile-footer {
+        padding-top: 1rem;
+      }
+      .btn-logout {
+        width: 100%;
+        background: #fef2f2;
+        color: #ef4444;
+        border: 1px solid #fee2e2;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .btn-logout:hover {
+        background: #fee2e2;
+        color: #dc2626;
+      }
+      
+      @media (min-width: 1024px) {
+        .desktop-links {
+          display: flex;
+        }
+        #menu-toggle {
+          display: none;
+        }
+        #mobile-search-btn {
+          display: none;
+        }
+        .search-bar-desktop {
+          display: block;
+        }
+      }
+      .logo-text {
+        text-transform: capitalize;
+      }
+      @media (max-width: 480px) {
+        .logo-text {
+          display: none;
+        }
+        .logo-subtext {
+        display: none;
+        }
+        .btn-google-login {
+          padding: 8px;
+          width: 42px;
+          height: 42px;
+          justify-content: center;
+          border-radius: 50%;
+        }
+        .btn-google-login span {
+          display: none;
+        }
+      }
+     ]]> 
+     </b:skin>
+
+    >
+  </head>
+  <body>
+    <b:section class="main1" id="main1" showaddelement="yes"> </b:section>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <!-- Hamburger Trigger -->
+          <button
+            class="icon-btn"
+            id="menu-toggle"
+            aria-label="Open navigation menu"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <a expr:href="data:blog.homepageUrl.canonical" class="logo">
+            <!-- Favicon Container -->
+            <div
+              class="logo-box"
+              style="width: 28px; height: 28px; margin-bottom: 4px"
+            >
+              <img
+                expr:src="data:blog.blogspotFaviconUrl"
+                alt="logo"
+                style="width: 100%; height: 100%; object-fit: contain"
+              />
+            </div>
+
+            <!-- Title and Subtitle Group -->
+            <div
+              style="display: flex; flex-direction: column; line-height: 1.1"
+            >
+              <span
+                class="logo-text"
+                style="
+                  font-size: 18px;
+                  font-weight: 600;
+                  color: var(--text-color);
+                "
+                ><data:blog.title
+              /></span>
+              <span
+                class="logo-subtext"
+                style="
+                  font-family:
+                    -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                    Roboto, Helvetica, Arial, sans-serif;
+                  font-size: 9px;
+                  font-weight: 400;
+                  font-style: italic;
+                  color: #3c6522;
+                  letter-spacing: 0.17px;
+                  text-transform: uppercase;
+                "
+                >Parts &amp; Repair</span
+              >
+            </div>
+          </a>
+          <div class="desktop-links">
+            <a
+              expr:class='data:view.url == data:blog.homepageUrl.canonical ? "nav-item active" : "nav-item"'
+              expr:href="data:blog.homepageUrl.canonical"
+              id="nav-home"
+              >Home</a
+            >
+            <a
+              expr:class='data:view.url contains "/p/store.html" ? "nav-item active" : "nav-item"'
+              href="/p/store.html"
+              >Products</a
+            >
+            <a
+              expr:class='data:view.url contains "/p/service.html" ? "nav-item active" : "nav-item"'
+              href="/p/service.html"
+              >Book Repairs</a
+            >
+          </div>
+        </div>
+
+        <!-- Action Buttons Group (Fixed order: Search, Cart, Notification, Profile) -->
+        <div class="actions-group">
+          <!-- Search Icon First (Triggers sliding text-input on desktop, Overlay on mobile) -->
+          <div class="search-wrapper">
+            <div class="search-bar-desktop" id="desktop-search-container">
+              <input
+                type="text"
+                placeholder="Search pipes, tools, services..."
+                id="desktop-search-input"
+              />
+            </div>
+            <button
+              class="icon-btn"
+              id="search-trigger-btn"
+              aria-label="Toggle search bar"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+            <!-- Floating Dropdown Suggestions on Desktop -->
+            <div class="search-suggestions" id="desktop-suggestions">
+              <div class="suggestion-header">Suggestions</div>
+              <div id="desktop-suggestions-list"></div>
+            </div>
+          </div>
+
+          <!-- Shopping Cart Action -->
+          <button
+            class="icon-btn"
+            id="cart-trigger-btn"
+            aria-label="Open Shopping Cart"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              ></path>
+            </svg>
+            <span class="badge" id="cart-badge" style="display: none">0</span>
+          </button>
+
+          <!-- Notifications Panel -->
+          <button
+            class="icon-btn"
+            id="notification-trigger"
+            aria-label="Notifications"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="badge" style="background: #ef4444">1</span>
+          </button>
+
+          <!-- Dynamic Authentication Container (Single Mode: Google PopUp) -->
+          <div class="profile-container" id="auth-profile-container">
+            <!-- Dynamic Auth View gets painted here by JS -->
+            <button class="btn-google-login" id="google-login-btn-initial">
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="#4285F4"
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                />
+                <path
+                  fill="#EA4335"
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                />
+              </svg>
+              <span>Sign In</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Search Overlay (Prevents shifting other icons) -->
+      <div id="mobile-search-overlay">
+        <div class="search-overlay-inner">
+          <button
+            class="icon-btn"
+            id="close-search-mobile"
+            aria-label="Close search overlay"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+          </button>
+          <input
+            type="text"
+            class="search-input-mobile"
+            id="mobile-input"
+            placeholder="Search products or services..."
+          />
+          <button
+            class="icon-btn"
+            id="clear-search-btn"
+            aria-label="Clear search input"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile Suggestions list below input -->
+        <div class="mobile-suggestions" id="mobile-suggestions">
+          <div class="suggestion-header" style="padding: 15px">Suggestions</div>
+          <div id="mobile-suggestions-list"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- body main content as per if condition , like is homePage view or Pages view or any other according to that , let consider we have soe pages of blogger like products, orders,  -->
+
+    <!-- footer -->
+  </body>
+
+  <script type="module">
+    import {
+      initializeApp,
+      getApps,
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import {
+      getAuth,
+      signInWithPopup,
+      GoogleAuthProvider,
+      onAuthStateChanged,
+      signOut,
+      setPersistence,
+      browserLocalPersistence,
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import {
+      getMessaging,
+      getToken,
+      onMessage,
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-messaging.js";
+
+    // Dynamic environment fallback resolution parsing
+    let firebaseConfig = {};
+    try {
+      if (typeof __firebase_config !== "undefined") {
+        firebaseConfig = JSON.parse(__firebase_config);
+      } else {
+        firebaseConfig = {
+          apiKey: "AIzaSyDtRB-0S8VNgY-HoQYAAvkLX7iOAK-K-i0",
+          authDomain: "antinnamain.firebaseapp.com",
+          projectId: "antinnamain",
+          storageBucket: "antinnamain.appspot.com",
+          messagingSenderId: "907520801915",
+          appId: "1:907520801915:web:5a99962f7ce400da54b6de",
+        };
+      }
+    } catch (e) {
+      console.error(
+        "Critical: Failed to resolve core Firebase configurations.",
+        e,
+      );
+    }
+
+    // Initialize application nodes securely
+    const app = !getApps().length
+      ? initializeApp(firebaseConfig)
+      : getApps()[0];
+    const auth = getAuth(app);
+    await setPersistence(auth, browserLocalPersistence);
+    const provider = new GoogleAuthProvider();
+
+    // Global Messaging Instantiation References
+    const messaging = getMessaging(app);
+
+    // Global reference placeholder to tie our Cloudflare worker context down
+    let cfWorkerRegistration = null;
+    const APPS_SCRIPT_URL =
+      "https://script.google.com/macros/s/YOUR_DEPLOYED_WEB_APP_ID/exec";
+
+    // Resolve persistent unique browser profile instance ID
+    let browserClientId = localStorage.getItem("antinna_browser_client_id");
+    if (!browserClientId) {
+      browserClientId =
+        "client-" +
+        Math.random().toString(36).substring(2, 15) +
+        "-" +
+        Date.now().toString(36);
+      localStorage.setItem("antinna_browser_client_id", browserClientId);
+    }
+    // Proactively backmount the service worker loop on execution start
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.getRegistration("/").then((existing) => {
+          if (!existing) {
+            navigator.serviceWorker
+              .register("/firebase-messaging-sw.js")
+              .then((reg) =>
+                console.log(
+                  "FCM Worker ready state bound with scope:",
+                  reg.scope,
+                ),
+              )
+              .catch((err) =>
+                console.error("Worker registration structural failure:", err),
+              );
+          }
+        });
+      });
+    }
+    /**
+     * REACTIVE CORE: Synchronizes latest tokens to backend database arrays
+     * Safe to run anytime, under any state transition scenario.
+     */
+    async function autoSyncDeviceSession(currentUserInstance) {
+      if (!messaging) return;
+      if (Notification.permission === "denied") {
+        console.warn(
+          "Notification permissions blocked by browser configuration.",
+        );
+        return;
+      }
+
+      const userIdentifier = currentUserInstance
+        ? currentUserInstance.uid
+        : "guest";
+      const syncSessionKey = `antinna_sync_lock_${userIdentifier}`;
+
+      // Check lock state BEFORE requesting token promises
+      if (sessionStorage.getItem(syncSessionKey) === "active") {
+        console.log(
+          `[Sync Ignored] State lock for ${userIdentifier} already active.`,
+        );
+        return;
+      }
+      try {
+        const permission = await Notification.requestPermission();
+        if (permission !== "granted") return;
+
+        const activeRegistration = await navigator.serviceWorker.ready;
+        const registrationToken = await getToken(messaging, {
+          vapidKey:
+            "BA2CnO0uBsc7Ikc9LHyaY92oY1IGmTFLYemtw7uWSPrWHUP6SibSpMka0Hif5QibHqsHO7dbUPpto87m1fTEKr0",
+          serviceWorkerRegistration: activeRegistration,
+        });
+
+        if (registrationToken) {
+          let detectedClient = "Web Browser";
+          if (navigator.userAgent.indexOf("Chrome") > -1)
+            detectedClient = "Chrome";
+          else if (navigator.userAgent.indexOf("Safari") > -1)
+            detectedClient = "Safari";
+          else if (navigator.userAgent.indexOf("Firefox") > -1)
+            detectedClient = "Firefox";
+          if (navigator.userAgent.indexOf("Mobile") > -1)
+            detectedClient += " (Mobile)";
+
+          // Clean up conditions to a unified if-else architecture branch
+          if (currentUserInstance) {
+            try {
+              const idToken = await currentUserInstance.getIdToken();
+              dispatchSyncPayload({
+                action: "SYNC_DEVICE",
+                clientId: browserClientId,
+                idToken: idToken,
+                deviceToken: registrationToken,
+                clientName: detectedClient,
+              });
+              sessionStorage.setItem(syncSessionKey, "active");
+            } catch (err) {
+              console.error("Failed fetching secure token proof:", err);
+            }
+          } else {
+            // Guest block structure logic
+            dispatchSyncPayload({
+              action: "SYNC_DEVICE",
+              clientId: browserClientId,
+              idToken: "guest_session",
+              deviceToken: registrationToken,
+              clientName: detectedClient,
+            });
+            sessionStorage.setItem(syncSessionKey, "active");
+          }
+        }
+      } catch (err) {
+        console.error("Central synchronization sequence blocked:", err);
+      }
+    }
+
+    function dispatchSyncPayload(payload) {
+      fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).catch((err) => console.error("Database tracking relay failure:", err));
+    }
+
+    // Handle incoming tracking notifications foreground context alerts
+    onMessage(messaging, (payload) => {
+      console.log("Foreground tracking alert frame:", payload);
+      if (typeof showToast === "function") {
+        if (payload.notification) {
+          showToast(
+            `${payload.notification.title}: ${payload.notification.body}`,
+            "info",
+          );
+        }
+      }
+    });
+
+    // DOM Target Nodes
+    const authContainer = document.getElementById("auth-profile-container");
+
+    /**
+     * Executes authentication pop-up lifecycle sequence
+     */
+    async function handleLogin() {
+      try {
+        const loginBtn = document.getElementById("google-login-btn-initial");
+        if (loginBtn) {
+          loginBtn.disabled = true;
+          loginBtn.style.opacity = "0.7";
+        }
+        await signInWithPopup(auth, provider);
+        if (typeof showToast === "function") {
+          showToast("Secure login established successfully!", "success");
+        }
+      } catch (error) {
+        console.error("Authentication Error Matrix:", error);
+        if (typeof showToast === "function") {
+          if (error.code === "auth/popup-closed-by-user") {
+            showToast("Sign-in context aborted by user.", "error");
+          } else {
+            showToast("Failed to establish validation session.", "error");
+          }
+        }
+      } finally {
+        const loginBtn = document.getElementById("google-login-btn-initial");
+        if (loginBtn) {
+          loginBtn.disabled = false;
+          loginBtn.style.opacity = "1";
+        }
+      }
+    }
+
+    /**
+     * Terminate active validation container context
+     */
+    async function handleLogout() {
+      try {
+        const currentUserInstance = auth.currentUser;
+        const userIdentifier = currentUserInstance
+          ? currentUserInstance.uid
+          : "guest";
+        // Disconnect browser token context tracking before closing out identity hooks
+        dispatchSyncPayload({
+          //TODO: LOGOUT DELETE
+          //todo
+          action: "LOGOUT_DEVICE",
+          clientId: browserClientId,
+        });
+        // Wipe persistent route locks completely during explicit identity sign-out shifts
+        sessionStorage.removeItem(`antinna_sync_lock_${userIdentifier}`);
+        sessionStorage.removeItem("antinna_sync_lock_guest");
+        await signOut(auth);
+        if (typeof showToast === "function") {
+          showToast("Session signed out cleanly.", "info");
+        }
+      } catch (error) {
+        console.error("SignOut pipeline exception execution:", error);
+        if (typeof showToast === "function") {
+          showToast("Failed to safely terminate session data flow.", "error");
+        }
+      }
+    }
+
+    /**
+     * Toggles profile summary inspector visibility dropdown states
+     */
+    function toggleProfileDropdown(event) {
+      event.stopPropagation();
+      const dropdown = document.getElementById("profile-dropdown-menu");
+      if (dropdown) {
+        dropdown.classList.toggle("active");
+      }
+    }
+
+    /**
+     * Copy User Unique ID context string buffer to clipboard securely
+     */
+    async function copyUserUID(uid) {
+      try {
+        await navigator.clipboard.writeText(uid);
+        if (typeof showToast === "function") {
+          showToast("UID parsed and copied to clipboard!", "success");
+        }
+      } catch (err) {
+        console.error(
+          "Failed writing explicit buffer strings to clipboard",
+          err,
+        );
+      }
+    }
+
+    /**
+     * High Performance Interface Painter updating targets reactive to authentication state
+     */
+    function renderAuthState(user) {
+      if (!authContainer) return;
+
+      // 1. ANCHOR STATE: User is Unauthenticated (Render initial clean Sign-In template node)
+      if (!user) {
+        authContainer.innerHTML = `
+          <button class="btn-google-login" id="google-login-btn-initial">
+            <svg viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>Sign In</span>
+          </button>
+        `;
+
+        const initialBtn = document.getElementById("google-login-btn-initial");
+        if (initialBtn) {
+          initialBtn.addEventListener("click", handleLogin);
+        }
+        return;
+      }
+
+      // 2. ACTIVE STATE: User Profile Loaded
+      const userAvatar =
+        user.photoURL ||
+        "https://www.gravatar.com/avatar/00000000000000000000000000000000";
+      const userEmail = user.email || "anonymous@antinna.in";
+      const userName = user.displayName || "Antinna Member";
+
+      // Resolve phone number if explicitly bound to the social auth account profile
+      // Resolve phone number safely for Blogger XML
+      let linkedPhoneNumber = user.phoneNumber || null;
+      if (!linkedPhoneNumber) {
+        if (user.providerData) {
+          const providerMatch = user.providerData.find(
+            (info) => info.phoneNumber,
+          );
+          if (providerMatch) {
+            linkedPhoneNumber = providerMatch.phoneNumber;
+          }
+        }
+      }
+
+      // Conditional block: Generate UI element string ONLY if phone metadata string exists
+      const phoneMarkup = linkedPhoneNumber
+        ? `<div class="profile-phone" style="font-size: 12px; color: var(--text-muted); margin-top: 2px; display: flex; align-items: center; gap: 4px;">
+             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+             <span>${linkedPhoneNumber}</span>
+           </div>`
+        : "";
+
+      authContainer.innerHTML = `
+        <div class="profile-container">
+          <button class="icon-btn" id="profile-avatar-trigger" aria-label="Toggle user account dropdown" style="padding: 0; overflow: hidden; border: 2px solid var(--border);">
+            <img src="${userAvatar}" alt="${userName}" style="width: 100%; height: 100%; object-fit: cover;" />
+          </button>
+          
+          <div class="profile-dropdown" id="profile-dropdown-menu">
+            <div class="profile-header">
+              <img src="${userAvatar}" alt="${userName}" />
+              <div>
+                <div class="profile-name">${userName}</div>
+                <div class="profile-email">${userEmail}</div>
+                ${phoneMarkup}
+              </div>
+            </div>
+            <div class="profile-body">
+              <span class="profile-body-title">Account Token Metadata ID</span>
+              <div class="profile-uid-box">
+                <span class="profile-uid" id="profile-uid-string-val">${user.uid}</span>
+                <button class="btn-copy-uid" id="profile-copy-uid-action-btn" title="Copy Unique Account Token ID">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="profile-footer">
+              <button class="btn-logout" id="profile-signout-action-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Logout Session</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Safe separate listeners binding sequence
+      const avatarTrigger = document.getElementById("profile-avatar-trigger");
+      if (avatarTrigger) {
+        avatarTrigger.addEventListener("click", toggleProfileDropdown);
+      }
+
+      const signoutBtn = document.getElementById("profile-signout-action-btn");
+      if (signoutBtn) {
+        signoutBtn.addEventListener("click", handleLogout);
+      }
+
+      const copyBtn = document.getElementById("profile-copy-uid-action-btn");
+      if (copyBtn) {
+        copyBtn.addEventListener("click", () => copyUserUID(user.uid));
+      }
+    }
+
+    // Global document dismissal click tracking system
+    document.addEventListener("click", (e) => {
+      const dropdown = document.getElementById("profile-dropdown-menu");
+      const avatarTrigger = document.getElementById("profile-avatar-trigger");
+
+      if (dropdown) {
+        if (dropdown.classList.contains("active")) {
+          if (!dropdown.contains(e.target)) {
+            if (avatarTrigger) {
+              if (!avatarTrigger.contains(e.target)) {
+                dropdown.classList.remove("active");
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Reactive Master Pipeline Controller Hook
+    onAuthStateChanged(auth, (user) => {
+      renderAuthState(user);
+      // FIX HERE: Triggers instantly on initial load AND anytime they sign in midway
+      autoSyncDeviceSession(user);
+    });
+  </script>
+</html>
