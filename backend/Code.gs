@@ -12,6 +12,38 @@
 const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID'; // Placeholder
 
 /**
+ * Main entry point for GET requests (CORS-friendly for data retrieval)
+ */
+function doGet(e) {
+  try {
+    const action = e.parameter.action;
+    let response;
+
+    if (action === 'GET_INVENTORY') {
+      response = InventoryService.getFiltered({
+        page: parseInt(e.parameter.page) || 1,
+        pageSize: parseInt(e.parameter.pageSize) || 12,
+        category: e.parameter.category || '',
+        sortBy: e.parameter.sortBy || 'name'
+      });
+    } else {
+      throw new Error('Invalid GET action');
+    }
+
+    return ContentService.createTextOutput(JSON.stringify({
+      status: 'success',
+      data: response
+    })).setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({
+      status: 'error',
+      message: err.toString()
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+/**
  * Main entry point for POST requests
  */
 function doPost(e) {
@@ -35,9 +67,6 @@ function doPost(e) {
         break;
       case 'BOOK_REPAIR':
         response = ServiceService.book(payload);
-        break;
-      case 'GET_INVENTORY':
-        response = InventoryService.getFiltered(payload);
         break;
       default:
         throw new Error('Invalid action: ' + action);

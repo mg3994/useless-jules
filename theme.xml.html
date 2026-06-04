@@ -844,7 +844,7 @@
         </div>
       </div>
 
-      <main class="nav-container" style="margin-top: 20px;">
+      <main class="nav-container" style="margin-top: 20px; padding-top: 20px;">
         <div id="product-list" class="product-grid">
           <!-- JS dynamic render -->
           <div class="loading-state" style="grid-column: 1/-1; text-align: center; padding: 3rem;">
@@ -1115,6 +1115,7 @@
   </body>
 
   <script type="module">
+    //<![CDATA[
     import {
       initializeApp,
       getApps,
@@ -1605,22 +1606,20 @@
         if (!listContainer) return;
 
         try {
-          const res = await fetch(APPS_SCRIPT_URL, {
-            method: 'POST',
-            mode: 'cors', // Note: using cors here if available, or fallback to your current pattern
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              action: 'GET_INVENTORY',
-              page: this.state.page,
-              pageSize: this.state.pageSize,
-              category: this.state.category,
-              sortBy: this.state.sortBy
-            })
+          // Optimized: Using GET for data retrieval to bypass POST CORS body reading restrictions in GAS
+          const queryParams = new URLSearchParams({
+            action: 'GET_INVENTORY',
+            page: this.state.page,
+            pageSize: this.state.pageSize,
+            category: this.state.category,
+            sortBy: this.state.sortBy
           });
 
-          // Note: Since GAS doPost with no-cors doesn't return data,
-          // we assume the user has configured CORS or we use a JSONP-like approach.
-          // For this production refactor, we recommend the standard fetch if GAS is correctly set up.
+          const res = await fetch(`${APPS_SCRIPT_URL}?${queryParams.toString()}`, {
+            method: 'GET',
+            mode: 'cors'
+          });
+
           const result = await res.json();
 
           if (result.status === 'success') {
@@ -1787,5 +1786,6 @@
     } else {
       initUIController();
     }
+    //]]>
   </script>
 </html>
